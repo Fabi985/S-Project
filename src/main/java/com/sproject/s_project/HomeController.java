@@ -1,5 +1,6 @@
 package com.sproject.s_project;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -7,16 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @RequestMapping("/")
     public String index() {
-        String viewName = getViewName();
-        return viewName;
+        return "templates/index.html";
     }
 
     @RequestMapping("/test")
     public String test() {
-        return "test.html";
-    }
-
-    private String getViewName() {
-        return "index.html";
+        return "templates/test.html";
     }
 }
